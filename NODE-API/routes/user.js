@@ -56,7 +56,7 @@ router.get("/particularuser/:id",(req,res)=>{
     });
   
 })
-app.post("/updateprofile",upload.single("pic"),function(req,res){
+router.post("/updateprofile",upload.single("pic"),function(req,res){
     console.log(req.body);
     console.log(req.file)
     MongoClient.connect(url,function(err,conn){

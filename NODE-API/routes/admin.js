@@ -26,7 +26,7 @@ router.post("/registeradmin",(req,res)=>{
   
 })
 
-app.get("/delete/:id",(req,res)=>{
+router.get("/delete/:id",(req,res)=>{
     MongoClient.connect(url,(err,con)=>{
     var db = con.db("practice")
      db.collection("admin").deleteOne({_id:ObjectId(req.params.id)},(err,data)=>{
@@ -37,7 +37,7 @@ app.get("/delete/:id",(req,res)=>{
   
 })
 
-app.post("/updateprofile",function(req,res){
+router.post("/updateprofile",function(req,res){
     console.log(req.body);
     MongoClient.connect(url,function(err,conn){
         console.log("body",req.body)
